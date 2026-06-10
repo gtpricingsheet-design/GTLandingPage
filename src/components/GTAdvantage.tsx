@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap, Award, Leaf } from 'lucide-react';
+import { Zap, LayoutTemplate, Brain } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 export default function GTAdvantage() {
@@ -8,18 +8,18 @@ export default function GTAdvantage() {
   const advantages = [
     {
       icon: Zap,
-      title: 'Tech-Driven Logistics',
-      description: 'Real-time tracking, automated ordering systems, and data-driven supply chain management. We optimize every step for speed and accuracy.',
+      title: 'Fast & Focused',
+      description: 'No lengthy agency processes. You get a free mockup within 48 hours, clear timelines, and a direct line to the people building your project.',
     },
     {
-      icon: Award,
-      title: 'Unmatched Reliability',
-      description: 'Premium quality guaranteed. Our rigorous testing, certifications, and 70+ years of experience mean your business can depend on us.',
+      icon: LayoutTemplate,
+      title: 'Built to Convert',
+      description: 'Every design decision is made with your business goal in mind. Clean, purposeful layouts that guide visitors toward action — not just impressions.',
     },
     {
-      icon: Leaf,
-      title: 'Sustainable Sourcing',
-      description: 'Ethically sourced, locally-grown where possible. We partner with farms that share our commitment to quality and environmental responsibility.',
+      icon: Brain,
+      title: 'AI-First Thinking',
+      description: 'We don\'t bolt AI on as an afterthought. Automation is embedded from day one — saving your team hours every week and scaling what works.',
     },
   ];
 
@@ -52,10 +52,10 @@ export default function GTAdvantage() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Leading Businesses Choose Jovex Studio
+            Why Choose Jovex Studio
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We combine decades of expertise with cutting-edge technology to deliver unparalleled value.
+            We're not a faceless agency. We're a focused studio that ships fast, communicates clearly, and builds things that actually work.
           </p>
         </motion.div>
 

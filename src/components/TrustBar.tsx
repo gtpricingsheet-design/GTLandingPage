@@ -1,11 +1,11 @@
-import { Clock, Shield, CheckCircle, Users } from 'lucide-react';
+import { Zap, MessageSquare, BarChart2, Clock } from 'lucide-react';
 
 export default function TrustBar() {
   const trustItems = [
-    { icon: Clock, label: '70+ Years Legacy' },
-    { icon: Shield, label: 'BRCGS AA Grade' },
-    { icon: CheckCircle, label: 'SALSA Accredited' },
-    { icon: Users, label: 'Employee-Owned Trust' },
+    { icon: Zap, label: 'Fast Turnaround' },
+    { icon: MessageSquare, label: 'Free Mockup First' },
+    { icon: BarChart2, label: 'Conversion-Focused' },
+    { icon: Clock, label: 'Ongoing Support' },
   ];
 
   return (

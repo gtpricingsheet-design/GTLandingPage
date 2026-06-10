@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, LogIn } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Header() {
@@ -15,10 +15,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: 'Wholesale', href: '#wholesale' },
-    { label: 'Prep', href: '#prep' },
-    { label: 'Sectors', href: '#sectors' },
-    { label: 'Insights', href: '#insights' },
+    { label: 'Services', href: '#services' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -53,10 +52,13 @@ export default function Header() {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center gap-4">
-          <button className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg transition-all hover:shadow-lg hover:scale-105 font-medium text-sm">
-            <LogIn size={16} />
-            Client Portal
-          </button>
+          <a
+            href="#contact"
+            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg transition-all hover:shadow-lg hover:scale-105 font-medium text-sm"
+          >
+            Get a free mockup
+            <ArrowRight size={16} />
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -87,10 +89,14 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <button className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg transition-all font-medium">
-              <LogIn size={16} />
-              Client Portal
-            </button>
+            <a
+              href="#contact"
+              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg transition-all font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Get a free mockup
+              <ArrowRight size={16} />
+            </a>
           </div>
         </motion.div>
       )}
