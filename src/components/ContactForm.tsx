@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle2, ShieldCheck, Sparkles, Clock, Layout } from 'lucide-react';
+import { Send, CheckCircle2, ShieldCheck, Sparkles, Clock, Layout, AlertCircle } from 'lucide-react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,13 +11,40 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          subject: `New mockup request from ${formData.name}`,
+          from_name: formData.name,
+          email: formData.email,
+          website: formData.website || 'Not provided',
+          message: formData.description,
+          botcheck: false,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        setError('Something went wrong. Please try again or email jay@jovexstudio.com directly.');
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -172,6 +199,18 @@ export default function ContactForm() {
                     />
                   </div>
 
+                  {/* Error message */}
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-start gap-3 bg-red-50 border border-red-100 rounded-lg px-4 py-3 text-sm text-red-600"
+                    >
+                      <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
+                      <span>{error}</span>
+                    </motion.div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -183,7 +222,7 @@ export default function ContactForm() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                         </svg>
-                        Submitting...
+                        Sending...
                       </>
                     ) : (
                       <>
