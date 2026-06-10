@@ -11,16 +11,53 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API request delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    // Fallback for development if VITE_WEB3FORMS_ACCESS_KEY is not set
+    if (!accessKey || accessKey.includes('YOUR_ACCESS_KEY')) {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          website: formData.website || 'N/A',
+          message: formData.description,
+          subject: 'New Jovex Studio Mockup Request',
+          from_name: 'Jovex Studio Landing Page',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        setSubmitError(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setSubmitError('Failed to send request. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -110,6 +147,12 @@ export default function ContactForm() {
                     <h3 className="text-2xl font-bold text-gray-900">Request your free mockup</h3>
                     <p className="text-gray-500 text-sm">Tell us a bit about your project and we'll handle the rest.</p>
                   </div>
+
+                  {submitError && (
+                    <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg animate-shake">
+                      {submitError}
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
