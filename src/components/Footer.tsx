@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Facebook, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, MapPin, Facebook, Linkedin, Twitter, Send } from 'lucide-react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#contact" className="hover:text-indigo-600 transition-colors">
-                  Get a Free Mockup
+                  Get a free mockup
                 </a>
               </li>
             </ul>
@@ -78,12 +78,7 @@ export default function Footer() {
                 <MapPin size={16} className="flex-shrink-0 mt-1" />
                 <span>Remote / UK</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone size={16} className="flex-shrink-0 mt-1" />
-                <a href="#" className="hover:text-indigo-600 transition-colors">
-                  [Contact Number]
-                </a>
-              </li>
+
               <li className="flex items-start gap-3">
                 <Mail size={16} className="flex-shrink-0 mt-1" />
                 <a

@@ -2,9 +2,10 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
 import CoreDivisions from './components/CoreDivisions';
-import GTAdvantage from './components/GTAdvantage';
-import Sectors from './components/Sectors';
+import Advantage from './components/Advantage';
+import HowItWorks from './components/HowItWorks';
 import Testimonial from './components/Testimonial';
+import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,9 +15,10 @@ function App() {
       <Hero />
       <TrustBar />
       <CoreDivisions />
-      <GTAdvantage />
-      <Sectors />
+      <Advantage />
+      <HowItWorks />
       <Testimonial />
+      <ContactForm />
       <Footer />
     </div>
   );

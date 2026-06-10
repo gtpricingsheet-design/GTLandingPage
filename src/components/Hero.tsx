@@ -56,24 +56,7 @@ export default function Hero() {
               We build high-converting websites and custom AI workflows that free your team from repetitive work — so you can focus on growing your business.
             </motion.p>
 
-            {/* Micro Stats — honest placeholders, fill in when ready */}
-            <motion.div
-              variants={itemVariants}
-              className="grid grid-cols-3 gap-4 py-6 border-y border-gray-200"
-            >
-              <div>
-                <div className="text-2xl font-bold text-indigo-600">—</div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-indigo-600">—</div>
-                <div className="text-sm text-gray-600">Client Satisfaction</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-indigo-600">—</div>
-                <div className="text-sm text-gray-600">Hours Saved via AI</div>
-              </div>
-            </motion.div>
+
 
             {/* CTA Buttons */}
             <motion.div

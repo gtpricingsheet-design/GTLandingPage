@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ImageIcon, Code2, Rocket } from 'lucide-react';
 
-export default function Sectors() {
+export default function HowItWorks() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const steps = [
@@ -114,7 +114,7 @@ export default function Sectors() {
             href="#contact"
             className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-lg font-semibold transition-all hover:shadow-xl hover:scale-105"
           >
-            Start with a free mockup
+            Get a free mockup
           </a>
         </motion.div>
       </div>

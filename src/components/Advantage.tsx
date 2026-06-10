@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Zap, LayoutTemplate, Brain } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
-export default function GTAdvantage() {
+export default function Advantage() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const advantages = [
