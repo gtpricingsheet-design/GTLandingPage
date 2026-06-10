@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import Logo from './Logo';
+import AnimatedConsole from './AnimatedConsole';
 
 export default function Hero() {
   const containerVariants = {
@@ -59,6 +59,7 @@ export default function Hero() {
 
 
 
+
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
@@ -81,46 +82,14 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column — Visual Card */}
+          {/* Right Column — Animated Console Dashboard */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl"
+            className="flex items-center justify-center w-full"
           >
-            <div className="w-full h-full bg-gradient-to-br from-indigo-100 via-indigo-50 to-blue-50 flex items-center justify-center relative">
-              {/* Decorative blobs */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-400 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-300 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-              </div>
-              {/* Floating card mock */}
-              <div className="relative z-10 w-64 space-y-3">
-                <div className="bg-white rounded-xl p-4 shadow-lg">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Logo size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-900">Jovex Studio</div>
-                      <div className="text-xs text-gray-500">New project brief received</div>
-                    </div>
-                  </div>
-                  <div className="h-2 bg-indigo-100 rounded-full w-full mb-1.5"></div>
-                  <div className="h-2 bg-indigo-100 rounded-full w-3/4"></div>
-                </div>
-                <div className="bg-white rounded-xl p-4 shadow-lg">
-                  <div className="text-xs font-semibold text-gray-900 mb-2">AI Workflow Active</div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs text-gray-600">Lead qualification running…</span>
-                  </div>
-                </div>
-                <div className="bg-indigo-600 rounded-xl p-4 shadow-lg text-white text-center">
-                  <div className="text-xs font-semibold">Mockup ready in 48hrs</div>
-                </div>
-              </div>
-            </div>
+            <AnimatedConsole />
           </motion.div>
         </div>
       </div>
