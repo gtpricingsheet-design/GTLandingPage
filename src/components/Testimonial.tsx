@@ -13,7 +13,7 @@ export default function Testimonial() {
           transition={{ duration: 0.6 }}
           className="text-center space-y-6 py-12"
         >
-          <div className="text-sm font-semibold tracking-wider text-green-600 uppercase">
+          <div className="text-sm font-semibold tracking-wider text-indigo-600 uppercase">
             Portfolio
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">

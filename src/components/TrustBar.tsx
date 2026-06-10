@@ -17,7 +17,7 @@ export default function TrustBar() {
             return (
               <div key={index} className="flex items-center gap-4">
                 <div className="flex-shrink-0">
-                  <IconComponent className="w-6 h-6 text-green-600" />
+                  <IconComponent className="w-6 h-6 text-indigo-600" />
                 </div>
                 <span className="text-sm md:text-base font-medium text-gray-900">
                   {item.label}

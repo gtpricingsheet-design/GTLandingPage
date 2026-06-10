@@ -72,7 +72,7 @@ export default function Sectors() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 relative"
         >
           {/* Connector line (desktop only) */}
-          <div className="hidden md:block absolute top-10 left-1/6 right-1/6 h-px bg-green-200 z-0" />
+          <div className="hidden md:block absolute top-10 left-1/6 right-1/6 h-px bg-indigo-200 z-0" />
 
           {steps.map((step, index) => {
             const IconComponent = step.icon;
@@ -84,10 +84,10 @@ export default function Sectors() {
               >
                 {/* Step number + icon */}
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 rounded-2xl bg-green-50 border-2 border-green-200 group-hover:border-green-600 group-hover:bg-green-600 flex items-center justify-center transition-all duration-300">
-                    <IconComponent className="w-8 h-8 text-green-600 group-hover:text-white transition-colors duration-300" />
+                  <div className="w-20 h-20 rounded-2xl bg-indigo-50 border-2 border-indigo-200 group-hover:border-indigo-600 group-hover:bg-indigo-600 flex items-center justify-center transition-all duration-300">
+                    <IconComponent className="w-8 h-8 text-indigo-600 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <span className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-green-600 text-white text-xs font-bold flex items-center justify-center shadow-md">
+                  <span className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center shadow-md">
                     {step.number}
                   </span>
                 </div>
@@ -112,7 +112,7 @@ export default function Sectors() {
         >
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-lg font-semibold transition-all hover:shadow-xl hover:scale-105"
+            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-lg font-semibold transition-all hover:shadow-xl hover:scale-105"
           >
             Start with a free mockup
           </a>

@@ -75,8 +75,8 @@ export default function GTAdvantage() {
                 className="bg-white rounded-xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center">
-                    <IconComponent className="w-7 h-7 text-green-600" />
+                  <div className="w-14 h-14 rounded-lg bg-indigo-100 flex items-center justify-center">
+                    <IconComponent className="w-7 h-7 text-indigo-600" />
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">

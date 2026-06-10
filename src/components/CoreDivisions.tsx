@@ -47,9 +47,9 @@ export default function CoreDivisions() {
         'CRM & tool integrations',
         'Save hours every week',
       ],
-      bgColor: 'bg-gray-900',
-      textColor: 'text-white',
-      borderColor: 'border-gray-700',
+      bgColor: 'bg-indigo-50',
+      textColor: 'text-gray-900',
+      borderColor: 'border-indigo-200',
     },
     {
       title: 'Lead Generation',
@@ -99,12 +99,12 @@ export default function CoreDivisions() {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(22, 163, 74, 0.15)' }}
-                className={`${service.bgColor} rounded-xl p-8 border-l-4 border-green-600 border-r border-t border-b ${service.borderColor} transition-all cursor-pointer group`}
+                whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(79, 70, 229, 0.15)' }}
+                className={`${service.bgColor} rounded-xl p-8 border-l-4 border-indigo-600 border-r border-t border-b ${service.borderColor} transition-all cursor-pointer group`}
               >
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-green-600/10 flex items-center justify-center flex-shrink-0">
-                    <IconComponent className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 rounded-lg bg-indigo-600/10 flex items-center justify-center flex-shrink-0">
+                    <IconComponent className="w-6 h-6 text-indigo-600" />
                   </div>
                   <h3 className={`text-2xl font-bold ${service.textColor}`}>
                     {service.title}
@@ -118,7 +118,7 @@ export default function CoreDivisions() {
                 <ul className="space-y-3 mb-8">
                   {service.bullets.map((bullet, i) => (
                     <li key={i} className={`flex items-start gap-3 ${service.textColor}`}>
-                      <div className="w-5 h-5 rounded-full bg-green-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 rounded-full bg-indigo-600 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-white text-xs font-bold">✓</span>
                       </div>
                       <span className="text-sm">{bullet}</span>
@@ -128,7 +128,7 @@ export default function CoreDivisions() {
 
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold group-hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold group-hover:gap-3 transition-all"
                 >
                   Learn more
                   <ArrowRight size={16} />

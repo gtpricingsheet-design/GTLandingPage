@@ -31,7 +31,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">JS</span>
           </div>
           <span className="text-xl font-bold text-gray-900">Jovex Studio</span>
@@ -43,7 +43,7 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-700 hover:text-green-600 transition-colors text-sm font-medium"
+              className="text-gray-700 hover:text-indigo-600 transition-colors text-sm font-medium"
             >
               {link.label}
             </a>
@@ -54,7 +54,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#contact"
-            className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg transition-all hover:shadow-lg hover:scale-105 font-medium text-sm"
+            className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg transition-all hover:shadow-lg hover:scale-105 font-medium text-sm"
           >
             Get a free mockup
             <ArrowRight size={16} />
@@ -83,7 +83,7 @@ export default function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                className="block text-gray-700 hover:text-green-600 font-medium transition-colors"
+                className="block text-gray-700 hover:text-indigo-600 font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -91,7 +91,7 @@ export default function Header() {
             ))}
             <a
               href="#contact"
-              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg transition-all font-medium"
+              className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg transition-all font-medium"
               onClick={() => setIsOpen(false)}
             >
               Get a free mockup
