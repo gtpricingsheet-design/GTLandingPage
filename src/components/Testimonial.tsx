@@ -11,31 +11,17 @@ export default function Testimonial() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center space-y-8"
+          className="text-center space-y-6 py-12"
         >
-          <div>
-            <p className="text-xl md:text-2xl italic text-gray-700 leading-relaxed mb-8">
-              "GT Produce transformed how we manage our supply chain. Their reliability, quality, and tech-forward approach means we can focus on what we do best. They're not just a supplier—they're a trusted partner."
-            </p>
-            <div className="flex flex-col items-center">
-              <p className="font-semibold text-gray-900">Sarah Mitchell</p>
-              <p className="text-gray-600 text-sm">Head of Operations, Premier Hospitality Group</p>
-            </div>
+          <div className="text-sm font-semibold tracking-wider text-green-600 uppercase">
+            Portfolio
           </div>
-
-          <div className="flex items-center justify-center gap-2 pt-4">
-            {[...Array(5)].map((_, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: 0.1 * i }}
-                className="text-2xl"
-              >
-                ★
-              </motion.span>
-            ))}
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Case Studies & Work
+          </h2>
+          <p className="text-lg text-gray-600 max-w-md mx-auto">
+            Our portfolio of custom web designs and smart AI automation workflows is coming soon.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -38,7 +38,7 @@ export default function GTAdvantage() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: 'easeOut' as const },
     },
   };
 
@@ -52,7 +52,7 @@ export default function GTAdvantage() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why Leading Businesses Choose GT Produce
+            Why Leading Businesses Choose Jovex Studio
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We combine decades of expertise with cutting-edge technology to deliver unparalleled value.

@@ -18,7 +18,7 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: 'easeOut' as const },
     },
   };
 
@@ -96,9 +96,9 @@ export default function Hero() {
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-300 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
               </div>
               <div className="relative z-10 text-center">
-                <div className="text-6xl mb-4">🥬</div>
-                <p className="text-gray-500 font-semibold">Premium Fresh Produce</p>
-                <p className="text-gray-400 text-sm">Leeds, UK</p>
+                <div className="text-6xl mb-4">✨</div>
+                <p className="text-gray-900 font-bold text-2xl tracking-tight">Jovex Studio</p>
+                <p className="text-gray-600 text-sm mt-1">Web Design & AI Automation</p>
               </div>
             </div>
           </motion.div>

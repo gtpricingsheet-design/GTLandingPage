@@ -1,3 +1,9 @@
-# GTLandingPage
+# Jovex Studio Landing Page
 
-[![Open in Bolt](https://bolt.new/static/open-in-bolt.svg)](https://bolt.new/~/sb1-wtfopdjp)
+Premium web design and smart AI automation for businesses.
+
+## Tech Stack
+*   React
+*   Vite
+*   Tailwind CSS
+*   Framer Motion

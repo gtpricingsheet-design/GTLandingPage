@@ -23,12 +23,12 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">GT</span>
+                <span className="text-white font-bold text-sm">JS</span>
               </div>
-              <span className="text-lg font-bold text-white">GT Produce</span>
+              <span className="text-lg font-bold text-white">Jovex Studio</span>
             </div>
             <p className="text-sm leading-relaxed">
-              The UK's premier fresh produce partner for businesses that demand the best.
+              Premium web design and smart AI automation for businesses.
             </p>
             <div className="flex gap-4 pt-4">
               <a href="#" className="hover:text-green-400 transition-colors">
@@ -76,21 +76,21 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="flex-shrink-0 mt-1" />
-                <span>Leeds, UK</span>
+                <span>Remote / UK</span>
               </li>
               <li className="flex items-start gap-3">
                 <Phone size={16} className="flex-shrink-0 mt-1" />
-                <a href="tel:+441132500000" className="hover:text-green-400 transition-colors">
-                  +44 (0)113 250 0000
+                <a href="#" className="hover:text-green-400 transition-colors">
+                  [Contact Number]
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={16} className="flex-shrink-0 mt-1" />
                 <a
-                  href="mailto:hello@gtproduce.uk"
+                  href="mailto:hello@jovex.studio"
                   className="hover:text-green-400 transition-colors"
                 >
-                  hello@gtproduce.uk
+                  hello@jovex.studio
                 </a>
               </li>
             </ul>
@@ -100,7 +100,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6">Newsletter</h4>
             <p className="text-sm mb-4">
-              Get the latest insights on wholesale trends and product updates.
+              Get the latest insights on web design and AI automation.
             </p>
             <form onSubmit={handleSubscribe} className="relative">
               <input
@@ -128,7 +128,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 space-y-4 md:space-y-0">
-            <p>&copy; 2024 GT Produce. All rights reserved.</p>
+            <p>&copy; 2026 Jovex Studio. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-green-400 transition-colors">
                 Privacy Policy
