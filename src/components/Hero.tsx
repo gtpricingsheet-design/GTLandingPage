@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, CalendarCheck } from 'lucide-react';
 import AnimatedConsole from './AnimatedConsole';
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (opts: { url: string }) => void;
+    };
+  }
+}
+
+const CALENDLY_URL = 'https://calendly.com/jay-jovexstudio/30min';
 
 export default function Hero() {
   const containerVariants = {
@@ -21,6 +31,16 @@ export default function Hero() {
       y: 0,
       transition: { duration: 0.6, ease: 'easeOut' as const },
     },
+  };
+
+  const openCalendly = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      // Fallback: open directly if widget hasn't loaded yet
+      window.open(CALENDLY_URL, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -57,29 +77,38 @@ export default function Hero() {
               We build high-converting websites and custom AI workflows that free your team from repetitive work — so you can focus on growing your business.
             </motion.p>
 
-
-
-
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
+              {/* Primary CTA — Calendly popup */}
+              <button
+                onClick={openCalendly}
+                className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-lg transition-all hover:shadow-xl hover:scale-105 font-semibold"
+              >
+                <CalendarCheck size={18} />
+                Book a free call
+              </button>
+
+              {/* Secondary CTA — scroll to contact form */}
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-lg transition-all hover:shadow-xl hover:scale-105 font-semibold"
+                className="flex items-center justify-center gap-2 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3.5 rounded-lg transition-all font-semibold"
               >
                 Get a free mockup
                 <ArrowRight size={18} />
               </a>
-              <a
-                href="#services"
-                className="flex items-center justify-center gap-2 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3.5 rounded-lg transition-all font-semibold"
-              >
-                Our Services
-                <ArrowRight size={18} />
-              </a>
             </motion.div>
+
+            {/* Trust nudge */}
+            <motion.p
+              variants={itemVariants}
+              className="text-xs text-gray-400 flex items-center gap-1.5 pt-1"
+            >
+              <CalendarCheck size={13} className="text-emerald-500" />
+              30-min call &mdash; no commitment, no sales pressure.
+            </motion.p>
           </motion.div>
 
           {/* Right Column — Animated Console Dashboard */}
