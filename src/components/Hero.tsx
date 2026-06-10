@@ -38,15 +38,32 @@ export default function Hero() {
     if (window.Calendly) {
       window.Calendly.initPopupWidget({ url: CALENDLY_URL });
     } else {
-      // Fallback: open directly if widget hasn't loaded yet
       window.open(CALENDLY_URL, '_blank', 'noopener,noreferrer');
     }
   };
 
   return (
-    <section className="min-h-screen pt-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 flex items-center overflow-hidden">
-      <div className="max-w-7xl mx-auto w-full px-6 py-12">
+    <section className="relative min-h-screen pt-20 bg-gray-950 flex items-center overflow-hidden">
+
+      {/* Dot grid overlay */}
+      <div
+        className="absolute inset-0 z-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle, #a5b4fc 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      {/* Ambient glow — left */}
+      <div className="absolute top-1/3 -left-32 w-[480px] h-[480px] bg-indigo-600/20 rounded-full blur-[120px] z-0 pointer-events-none" />
+
+      {/* Ambient glow — right, behind console */}
+      <div className="absolute top-1/4 right-0 w-[520px] h-[520px] bg-indigo-500/15 rounded-full blur-[140px] z-0 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           {/* Left Column */}
           <motion.div
             className="space-y-6"
@@ -55,24 +72,30 @@ export default function Hero() {
             animate="visible"
           >
             <motion.div variants={itemVariants}>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 bg-indigo-50 border border-indigo-200 px-4 py-1.5 rounded-full">
-                <Sparkles size={14} />
+              <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-indigo-400 bg-indigo-400/10 border border-indigo-400/20 px-4 py-1.5 rounded-full">
+                <Sparkles size={12} />
                 Web Design & AI Automation
               </span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-6xl font-bold leading-tight text-gray-900"
+              className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-white"
             >
-              Websites that work.{' '}
-              <span className="text-indigo-600">Automation</span>{' '}
-              that scales.
+              Websites that{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
+                work.
+              </span>
+              <br />
+              Automation that{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
+                scales.
+              </span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed"
+              className="text-lg text-gray-400 leading-relaxed max-w-lg"
             >
               We build high-converting websites and custom AI workflows that free your team from repetitive work — so you can focus on growing your business.
             </motion.p>
@@ -82,36 +105,33 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
-              {/* Primary CTA — Calendly popup */}
               <button
                 onClick={openCalendly}
-                className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3.5 rounded-lg transition-all hover:shadow-xl hover:scale-105 font-semibold"
+                className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3.5 rounded-lg transition-all hover:shadow-[0_0_32px_rgba(99,102,241,0.4)] hover:scale-105 font-semibold"
               >
                 <CalendarCheck size={18} />
                 Book a free call
               </button>
 
-              {/* Secondary CTA — scroll to contact form */}
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3.5 rounded-lg transition-all font-semibold"
+                className="flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white/5 px-8 py-3.5 rounded-lg transition-all font-semibold"
               >
                 Get a free mockup
                 <ArrowRight size={18} />
               </a>
             </motion.div>
 
-            {/* Trust nudge */}
             <motion.p
               variants={itemVariants}
-              className="text-xs text-gray-400 flex items-center gap-1.5 pt-1"
+              className="text-xs text-gray-500 flex items-center gap-1.5 pt-1"
             >
               <CalendarCheck size={13} className="text-emerald-500" />
               30-min call &mdash; no commitment, no sales pressure.
             </motion.p>
           </motion.div>
 
-          {/* Right Column — Animated Console Dashboard */}
+          {/* Right Column — Animated Console */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
