@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, ShieldCheck, Sparkles, Clock, Layout, AlertCircle } from 'lucide-react';
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -36,6 +42,14 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (result.success) {
+        // Fire Google Ads conversion event
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18229511331',
+            event_category: 'form',
+            event_label: 'mockup_request',
+          });
+        }
         setIsSubmitted(true);
       } else {
         setError('Something went wrong. Please try again or email jay@jovexstudio.com directly.');
@@ -199,7 +213,6 @@ export default function ContactForm() {
                     />
                   </div>
 
-                  {/* Error message */}
                   {error && (
                     <motion.div
                       initial={{ opacity: 0, y: -8 }}
