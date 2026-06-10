@@ -79,14 +79,13 @@ export default function Footer() {
                 <MapPin size={16} className="flex-shrink-0 mt-1" />
                 <span>Remote / UK</span>
               </li>
-
               <li className="flex items-start gap-3">
                 <Mail size={16} className="flex-shrink-0 mt-1" />
                 <a
-                  href="mailto:hello@jovex.studio"
+                  href="mailto:jay@jovexstudio.com"
                   className="hover:text-indigo-600 transition-colors"
                 >
-                  hello@jovex.studio
+                  jay@jovexstudio.com
                 </a>
               </li>
             </ul>
@@ -122,7 +121,6 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-200 pt-8">
-          {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 space-y-4 md:space-y-0">
             <p>&copy; 2026 Jovex Studio. All rights reserved.</p>
             <div className="flex gap-6">
