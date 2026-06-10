@@ -43,8 +43,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen pt-20 bg-gray-950 flex items-center overflow-hidden">
-
+    <section
+      className="relative min-h-screen pt-20 bg-gray-950 flex items-center overflow-hidden"
+      aria-label="Custom web design and AI automation for businesses"
+    >
       {/* Dot grid overlay */}
       <div
         className="absolute inset-0 z-0 opacity-[0.07]"
@@ -74,7 +76,7 @@ export default function Hero() {
             <motion.div variants={itemVariants}>
               <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-indigo-400 bg-indigo-400/10 border border-indigo-400/20 px-4 py-1.5 rounded-full">
                 <Sparkles size={12} />
-                Web Design & AI Automation
+                Custom Web Design &amp; AI Automation
               </span>
             </motion.div>
 
@@ -82,14 +84,9 @@ export default function Hero() {
               variants={itemVariants}
               className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-white"
             >
-              Websites that{' '}
+              Custom websites{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-                work.
-              </span>
-              <br />
-              Automation that{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">
-                scales.
+                built for business.
               </span>
             </motion.h1>
 
@@ -97,13 +94,21 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg text-gray-400 leading-relaxed max-w-lg"
             >
-              We build high-converting websites and custom AI workflows that free your team from repetitive work — so you can focus on growing your business.
+              We design and build high-converting business websites with AI-powered automation — so your team saves hours every week and your site turns visitors into customers.
+            </motion.p>
+
+            {/* Trust proof line */}
+            <motion.p
+              variants={itemVariants}
+              className="text-sm text-gray-500 leading-relaxed max-w-lg"
+            >
+              Get a <strong className="text-gray-300">free custom website mockup</strong> in 48 hours. No templates. No upfront cost. No commitment.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4 pt-2"
             >
               <button
                 onClick={openCalendly}
