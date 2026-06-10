@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, MapPin, Facebook, Linkedin, Twitter, Send } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -23,7 +24,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">JS</span>
+                <Logo size={20} />
               </div>
               <span className="text-lg font-bold text-gray-900">Jovex Studio</span>
             </div>

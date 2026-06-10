@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Hero() {
   const containerVariants = {
@@ -98,7 +99,7 @@ export default function Hero() {
                 <div className="bg-white rounded-xl p-4 shadow-lg">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold text-xs">JS</span>
+                      <Logo size={18} />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-gray-900">Jovex Studio</div>
